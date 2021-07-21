@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.buttonsListUsers {
+  font-size: 18px!important;
+  margin-right: 10px;
+}
+
+.buttonsListUsers:hover {
+  color: red;
+}
