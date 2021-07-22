@@ -15,7 +15,6 @@ const UserService = {
   delete: (id) => axios.delete(`${baseUrl}/delete/${id}`),
 
   createFile: (id, img) => axios.post(`${baseUrl}/uploadimg/${id}`, img),
-  updateNameImage: (id, name) => axios.put(`${baseUrl}/update-name-img/${id}`, name)
 };
 
 export default UserService;

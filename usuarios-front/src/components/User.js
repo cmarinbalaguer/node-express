@@ -95,7 +95,7 @@ const User = () => {
     setTheme(prevTheme => !prevTheme);
   };
 
-  const isTasksListVisible = [
+  const isListVisible = [
     UiState.Ready,
     UiState.Processing,
     UiState.ErrorProcessing
@@ -146,7 +146,7 @@ const User = () => {
               No se pudo cargar el formulario
             </Alert>
           </Box>}
-        {isTasksListVisible &&
+        {isListVisible &&
         <UserForm
           value={user}
           onChange={setUser}
