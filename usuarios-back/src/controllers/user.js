@@ -1,8 +1,7 @@
 const User = require('../models/users')
 
 exports.createUser = async (req, res) => {
-  const reqUser = JSON.parse(JSON.stringify(req.body));
-  const newUser = new User(reqUser);
+  const newUser = new User(req.body);
   newUser.save()
   .then(doc => {
     return res.json({response: 'success', data: doc});
