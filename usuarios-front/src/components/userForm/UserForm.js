@@ -38,7 +38,7 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
     };
   };
 
-  const getValidationErrors = () => {
+  /*const getValidationErrors = () => {
     const fullName = value.fullName.length
       ? ''
       : 'Requerido';
@@ -53,7 +53,7 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
     };
   };
 
-  const errors = getValidationErrors();
+  const errors = getValidationErrors();*/
 
   return (
     <Box
@@ -67,15 +67,15 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
           label="Nombre y apellidos"
           value={value.fullName}
           onChange={fullNameChangeHandler}
-          error={!!errors.fullName}
-          helperText={errors.fullName}/>
+          // error={!!errors.fullName}
+          // helperText={errors.fullName}
+          />
       </FormControl>
 
       <FormControl
         fullWidth
         margin="normal">
         <TextField
-          type="number"
           label="Teléfono"
           value={value.phone}
           onChange={phoneChangeHandler}/>
@@ -88,8 +88,9 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
           label="Email"
           value={value.email}
           onChange={fieldChangeHandler('email')}
-          error={!!errors.email}
-          helperText={errors.email}/>
+          // error={!!errors.email}
+          // helperText={errors.email}
+          />
       </FormControl>
       <FormControl
         fullWidth
@@ -109,7 +110,7 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
           <Button 
             variant="contained"
             color="primary"
-            disabled={errors.fullName === '' && errors.email === '' ? false : true}
+            // disabled={errors.fullName === '' && errors.email === '' ? false : true}
             onClick={create ? createUser : updateUser}>
               {create ? "GUARDAR" : "ACTUALIZAR" }
           </Button>
@@ -128,7 +129,7 @@ UserForm.defaultProps = {
 UserForm.propTypes = {
   value: PropTypes.shape({
     fullName: PropTypes.string.isRequired,
-    phone: PropTypes.number.isRequired,
+    phone: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     activo: PropTypes.bool.isRequired
   }).isRequired,

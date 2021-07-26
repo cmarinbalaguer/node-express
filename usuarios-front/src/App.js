@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from "./components/Home";
-import User from './components/User';
-import CreateUser from './components/CreateUser';
-import { UploadFile } from './components/UploadFile';
+import Home from "./components/home/Home";
+import User from './components/User/User';
+import CreateUser from './components/CreateUser/CreateUser';
+import { UploadFile } from './components/uploadFile/UploadFile';
 
 const routes = [
   {path: '/home', component: Home},
