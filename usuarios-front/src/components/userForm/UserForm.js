@@ -18,7 +18,7 @@ const UserForm = ({ value, onChange, updateUser, createUser, create }) => {
   const phoneChangeHandler = (event) => {
     onChange({
       ...value,
-      phone: +event.target.value
+      phone: event.target.value
     });
   };
 

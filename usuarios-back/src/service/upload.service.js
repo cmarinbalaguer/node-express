@@ -25,7 +25,6 @@ exports.uploadfile = (file, route) => {
 }
 
 const deleteFiles = (route) => {
-  console.log(route);
   const fs = require('fs').promises
   const path = require('path')
   const FOLDER_TO_REMOVE = `${route}`

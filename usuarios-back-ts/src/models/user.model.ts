@@ -1,6 +1,8 @@
-const User = require('../schema/users');
+import {userTypes} from '../types/userTypes'
 
-exports.createUser = (user) => {
+const User = require('../schema/user.schema');
+
+exports.createUser = (user: userTypes) => {
   const newUser = new User(user);
   return newUser.save()
   .then(doc => {
@@ -21,7 +23,7 @@ exports.getAllUsers = () => {
     });
 }
 
-exports.getUser = (id) => {
+exports.getUser = (id: string) => {
   return User.find({_id: id}, 'fullName email phone activo img')
     .then(doc => {
       return doc;
@@ -31,7 +33,7 @@ exports.getUser = (id) => {
     });
 }
 
-exports.uploadUser = (id, user) => {
+exports.uploadUser = (id: string, user: userTypes) => {
   return User.findByIdAndUpdate({_id: id}, {$set: user})
   .then(doc => {
     return doc;
@@ -41,7 +43,7 @@ exports.uploadUser = (id, user) => {
   });
 }
 
-exports.deleteUser = (id) => {
+exports.deleteUser = (id: string) => {
   return User.findByIdAndDelete({_id: id})
   .then(doc => {
     return doc;
